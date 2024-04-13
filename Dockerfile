@@ -9,6 +9,8 @@ RUN npm ci && npm cache clean --force
 
 add . /app
 
+ARG ZAMAZON.worksnow
+
 RUN npm run build
 
 FROM node:20-alpine
@@ -21,7 +23,7 @@ COPY --from=builder /app/.nuxt  /app/.nuxt
 
 ENV HOST 0.0.0.0 
 ENV AUTH_ORIGIN http://localhost:3000/
-ENV auth_secret __SET_SECRET__
+ENV auth_secret J3kN9zR7oW6bT1fG8qL5sY2xM4dP0hA
 EXPOSE 3000
 
 ENTRYPOINT ["node", ".output/server/index.mjs"]
