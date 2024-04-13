@@ -9,7 +9,7 @@ RUN npm ci && npm cache clean --force
 
 add . /app
 
-ARG ZAMAZON.worksnow
+ARG db_host
 
 RUN npm run build
 
